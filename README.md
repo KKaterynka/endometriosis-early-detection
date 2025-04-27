@@ -4,13 +4,11 @@ Implementation of the "Еnhancing early detection and mitigating bias in women�
 
 ## Abstract
 
-Women's health has long been underrepresented in medical research, leading to diagnostic delays and unmet healthcare needs. Conditions specific to women, such as endometriosis, often remain undiagnosed for years, partly due to a lack of diagnostic tools.
+Women's health has historically been underrepresented in medical research, resulting in a significant data gap for conditions that predominantly affect women, such as endometriosis. This lack of data has, in turn, impeded the development of effective diagnostic tools.
 
-The aim of this study is to develop a non-invasive screening tool that estimates the likelihood of endometriosis based solely on symptoms that are available for women at the early stages of their diagnostic journey. Our approach addresses the inherent unpredictability of the condition by incorporating the temporality, frequency and intensity of symptoms. Using self-reported questionnaire data from two groups - women diagnosed with endometriosis and those without a diagnosis - we apply machine learning techniques to build non-invasive symptom-based assessment model. In addition to classical machine learning methods, which focus on outcome prediction, we incorporate two causal modelling approaches - manual and automated bias correction - to better assess the diagnostic tool’s potential and account for confounding biases. Furthermore, we explore the use of synthetically generated data to improve model accuracy and generalizability to real-world scenarios. Finally, we identify and evaluate the most predictive symptoms of endometriosis, validating our findings through consultations with clinicians and comparisons with existing literature.
+The aim of this study is to develop a non-invasive screening tool that estimates the likelihood of endometriosis based solely on symptoms that are available for women at the early stages of their diagnostic journey. Our approach addresses the inherent unpredictability of the condition by incorporating the temporality, frequency and intensity of symptoms. Using self-reported questionnaire data from two groups - women diagnosed with endometriosis and those without a diagnosis - we apply machine learning techniques to build non-invasive symptom-based assessment model. In addition to classical machine learning methods, which focus on outcome prediction, we incorporate two causal modelling approaches - manual and automated bias correction - to better assess the diagnostic tool’s potential and account for confounding biases. Furthermore, to address data limitations in women's health research, we investigate the use of synthetically generated data to enhance model accuracy and generalizability to real-world scenarios. Finally, we identify and evaluate the most predictive symptoms of endometriosis, validating our findings through consultations with clinicians and comparisons with existing literature.
 
-Since clinicians are typically unable to diagnose endometriosis based solely on symptoms, the baseline classification performance is effectively around 50%. Our approach improves this baseline by *at least* 32%, demonstrating a significant advancement toward a non-invasive, symptom-based diagnostic tool. Though still in its early stages, this method already shows strong potential for clinical application. The proposed assessment tool may serve as a valuable aid when minimally invasive methods, such as ultrasound, fail to detect endometriosis lesions. Alternatively, it could be used as a first-line screening tool to help identify individuals who should be referred to specialized radiologists for a non-surgical endometriosis evaluation.
-
-The source code for implementation of this thesis is publicly available under this repository, the designed survey is accessible via [Google Forms](https://forms.gle/gnbMTjh3UVK8CHXb8) and access to the collected dataset can be granted upon reasonable request.
+The developed approach achieves a diagnostic accuracy of *at least* 82\%, demonstrating a significant step forward in the development of a non-invasive, symptom-based diagnostic tool. Though still in its early stages, this method demonstrates strong potential for clinical application, and practicing clinicians could benefit from the use of this data-driven assessment tool. The proposed method may serve as a valuable aid when minimally invasive methods, such as ultrasound, fail to detect endometriosis lesions. Alternatively, it could be used as a first-line screening tool to help identify individuals who should be referred to specialized radiologists for a non-surgical endometriosis evaluation.
 
 ## Repository Organization
 
@@ -27,7 +25,7 @@ The following modules are recommended to be run in a Colab environment due to th
 - `synthetic_data`: a directory containing the notebook [endometriosis_synthetic_data_generation.ipynb](https://colab.research.google.com/drive/1DVFFCmSvpkftDJpjBzm3cgwbuZAqhNPc), which focuses on generating synthetic data using TVAE (Tabular Variational Autoencoder) and CTGAN (Conditional Tabular Generative Adversarial Network).
 - `tabpfn_exp_data`: a directory with files related to TabPFN model training and evaluation. These experiments are conducted in a separate Colab environment, as TabPFN benefits from GPU acceleration. The notebook [TabPFN_endometriosis_experiment.ipynb](https://colab.research.google.com/drive/1S9i1o-kvCWtUDNY7kDj0AAR88KAaJCEo#scrollTo=zJd6GvvQrwlh) contains all relevant experiments for the TabPFN approach.
 
-The root directory contains a set of Jupyter notebooks (*.ipynb), each dedicated to specific experiments, outlined on the beginning or throughout the corresponding notebook. Although each notebook includes detailed explanations, a high-level summary is outlined below for clarity:
+The root directory contains a set of Jupyter notebooks (*.ipynb), each dedicated to specific experiments, outlined on the beginning or throughout the corresponding notebook. A high-level summary of experimental notebooks is as follows:
 
 | Notebook Name | Description |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -37,9 +35,17 @@ The root directory contains a set of Jupyter notebooks (*.ipynb), each dedicated
 | `nc_and_mbc_modelling_with_synthetic.ipynb` | Contains the experiments for NC and MBC modelling approaches using synthetic data for training purposes. |
 | `abc_modelling.ipynb` | Contains experiments for the ABC (Automatic Bias Correction) modeling approach, testing both training on real data only and synthetic data only. |
 
+## Data
+
+The data collection process is outlined in the thesis (see Chapter 5), and the collected dataset is not publicly available. To request access, please contact me (Kateryna Koval) with an explanation of your intended use. If the purpose is deemed appropriate, the authors will share the dataset, excluding open-ended responses to ensure participant anonymity.
+
+Throughout the development process, we integrate synthetic data, which is available under Google Drive folder [endo-thesis-data](https://drive.google.com/drive/u/1/folders/1lGtRx5dKdAaWoAuAgTNFOeFN5T-lwt8z).
+
 ## Usage
 
-This section provides instructions for running the experiments to replicate the findings of the study. Please note that experiments involving real data cannot be executed without access to the dataset. To obtain it, please contact me (Kateryna Koval) and include an explanation of your intended use. If the purpose is deemed appropriate, I will share the dataset, which includes the data, excluding open-ended responses to ensure participant anonymity. Once you have obtained the dataset, create a directory named `real_data` and place the file `womens_health_research_answer.csv` inside it. You can refer to the Google Drive folder [endo-thesis-data](https://drive.google.com/drive/u/1/folders/1lGtRx5dKdAaWoAuAgTNFOeFN5T-lwt8z) to explore the mentioned structure.
+This section provides instructions for running the experiments to reproduce the findings of the study. 
+
+Please note that experiments involving real data cannot be conducted without access to the collected dataset. If you have contacted the authors and received approval, you should have obtained the collected dataset, create a directory named `real_data` and place the file `womens_health_research_answer.csv` inside it. Refer to the Google Drive folder [endo-thesis-data](https://drive.google.com/drive/u/1/folders/1lGtRx5dKdAaWoAuAgTNFOeFN5T-lwt8z) to explore the mentioned structure.
 
 ### Clone the Project Repository
 
@@ -67,7 +73,7 @@ The list of dependencies provided here does not include those required for the n
 
 The image provides a general overview of the workflow. For a detailed explanation, please refer to Chapter 5 of the thesis.
 
-Please note that when prompted, please follow the provided instructions to navigate to the TabPFN Colab notebook and run the corresponding experiments, ensuring consistency with the procedures applied to the other predictive models. Alternatively, make use of files located under `tabpfn_exp_data`.
+Please note that when prompted, please follow the provided instructions to navigate to the TabPFN Colab notebook and run the corresponding experiments, ensuring consistency with the procedures applied to the other predictive models.
 
 <p align="center">
   <img width="539" alt="Screenshot 2025-04-23 at 14 40 29" src="https://github.com/user-attachments/assets/55b6e7e5-47f5-4bb6-bb35-d1ed5697f73e" />
@@ -75,9 +81,9 @@ Please note that when prompted, please follow the provided instructions to navig
 
 1. The process begins with dataset preparation in `data_preprocessing.ipynb`, where the raw data collected through Google Forms is preprocessed into a format suitable for modeling.
 
-2. To review the analysis of the collected data, please run the code in the `endometriosis_data_stats.ipynb` notebook.
+2. After the dataset is successfully processed, the preprocessed dataset `preds_preprocessed_endo_data.csv` will be saved in the `real_data` directory.
 
-3. After the dataset is successfully processed, the preprocessed dataset `preds_preprocessed_endo_data.csv` will be saved in the `real_data` directory.
+3. To review the analysis of the collected data, please run the code in the `endometriosis_data_stats.ipynb` notebook.
 
 4. Next, you can run the NC and MBC modeling approaches, initially using real data only, under `nc_and_mbc_modelling.ipynb`. Please note that, for proper execution, you will need to run the TabPFN experiments concurrently using its corresponding notebook. All necessary files related specifically to TabPFN are located in the `tabpfn_exp_data` directory and can be reused as needed.
 
