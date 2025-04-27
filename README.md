@@ -76,8 +76,9 @@ The image provides a general overview of the workflow. For a detailed explanatio
 Please note that when prompted, please follow the provided instructions to navigate to the TabPFN Colab notebook and run the corresponding experiments, ensuring consistency with the procedures applied to the other predictive models.
 
 <p align="center">
-  <img width="539" alt="Screenshot 2025-04-23 at 14 40 29" src="https://github.com/user-attachments/assets/55b6e7e5-47f5-4bb6-bb35-d1ed5697f73e" />
+  <img width="837" alt="Screenshot 2025-04-28 at 01 22 27" src="https://github.com/user-attachments/assets/8554e78e-5c18-4189-871c-f169893f693b" />
 </p>
+
 
 1. The process begins with dataset preparation in `data_preprocessing.ipynb`, where the raw data collected through Google Forms is preprocessed into a format suitable for modeling.
 
