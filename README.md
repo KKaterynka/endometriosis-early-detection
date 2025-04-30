@@ -37,7 +37,7 @@ The root directory contains a set of Jupyter notebooks (*.ipynb), each dedicated
 
 ## Data
 
-The data collection process is outlined in the thesis (see Chapter 5), and the collected dataset is not publicly available. To request access, please contact me (Kateryna Koval) with an explanation of your intended use. If the purpose is deemed appropriate, the authors will share the dataset, excluding open-ended responses to ensure participant anonymity.
+The data collection process is outlined in the thesis (see Chapter 4), and the collected dataset is not publicly available. To request access, please contact me (Kateryna Koval) with an explanation of your intended use. If the purpose is deemed appropriate, the authors will share the dataset, excluding open-ended responses to ensure participant anonymity.
 
 Throughout the development process, we integrate synthetic data, which is available under Google Drive folder [endo-thesis-data](https://drive.google.com/drive/u/1/folders/1lGtRx5dKdAaWoAuAgTNFOeFN5T-lwt8z).
 
